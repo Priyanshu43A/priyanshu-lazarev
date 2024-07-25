@@ -3,6 +3,11 @@ const scroll = new LocomotiveScroll({
   smooth: true,
 });
 
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+  loader.style.display = "none";
+});
+
 const navbar = document.querySelector("nav");
 
 navbar.addEventListener("mouseenter", () => {
@@ -85,5 +90,39 @@ vdoContainers.forEach((container) => {
     container.querySelector("video").classList.add("vdoanimation");
 
     container.querySelector("video").currentTime = 0;
+  });
+});
+
+const vdoItems = document.querySelectorAll(".page5-vdo-item");
+vdoItems.forEach((item) => {
+  item.addEventListener("mousemove", (e) => {
+    const cursor = item.querySelector(".vdocursor");
+    cursor.classList.remove("hidecursor");
+    cursor.classList.add("showcursor");
+
+    gsap.to(cursor, {
+      x: e.x - item.getBoundingClientRect().x - 55,
+      y: e.y - item.getBoundingClientRect().y - 45,
+      display: "flex",
+      scale: 1,
+
+      opacity: 1,
+      duration: 0.3,
+      ease: "sine.out",
+    });
+  });
+
+  item.addEventListener("mouseleave", (e) => {
+    const cursor = item.querySelector(".vdocursor");
+    cursor.classList.remove("showcursor");
+
+    gsap.to(cursor, {
+      duration: 0.3,
+      opacity: 0,
+      scale: 0,
+      display: "none",
+      ease: "sine.out",
+    });
+    //cursor.classList.add("hidecursor");
   });
 });
