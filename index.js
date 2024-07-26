@@ -1,12 +1,46 @@
-const scroll = new LocomotiveScroll({
-  el: document.querySelector("#main"),
-  smooth: true,
-});
+function locomotiveAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener("load", function () {
-  const loader = document.getElementById("loader");
-  loader.style.display = "none";
-});
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true,
+
+    // for tablet smooth
+    tablet: { smooth: true },
+
+    // for mobile
+    smartphone: { smooth: true },
+  });
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  ScrollTrigger.scrollerProxy("#main", {
+    scrollTop(value) {
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+
+    // follwoing line is not required to work pinning on touch screen
+
+    /* pinType: document.querySelector(".smooth-scroll").style.transform
+    ? "transform"
+    : "fixed"*/
+  });
+
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+  ScrollTrigger.refresh();
+}
+
+locomotiveAnimation();
 
 const navbar = document.querySelector("nav");
 
@@ -57,19 +91,27 @@ rightElems.forEach((elem) => {
 document
   .querySelector(".page3-center .icon > div")
   .addEventListener("click", () => {
+    console.log("clicked");
     document.querySelector(".fullvideo").style.display = "flex";
+    document.querySelector("#fullmyvdo").play();
+    document.querySelector("#fullmyvdo").muted = "false";
+
+    //document.querySelector("#main").style.display = "none";
     gsap.from(".fullvideo", {
       opacity: 0,
-      duration: 0.5,
+      duration: 1,
       delay: 0.1,
       scale: 0,
       ease: "power3.out",
     });
-    document.querySelector("#fullmyvdo").muted = "false";
   });
 
 document.querySelector(".fullvideo").addEventListener("click", () => {
   document.querySelector(".fullvideo").style.display = "none";
+
+  //document.querySelector("#main").style.display = "block";
+  document.querySelector("#fullmyvdo").currentTime = 0;
+  document.querySelector("#fullmyvdo").pause();
   document.querySelector("#fullmyvdo").muted = "true";
 });
 
@@ -125,4 +167,48 @@ vdoItems.forEach((item) => {
     });
     //cursor.classList.add("hidecursor");
   });
+});
+
+const expandedItems = document.querySelectorAll(".expanded-item");
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btns1 = document.querySelectorAll(".btns1");
+
+  btns1.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const details = document.getElementById("myDetails");
+      if (details) {
+        details.open = !details.open;
+      } else {
+        console.error("Element with ID 'myDetails' not found");
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btns2 = document.querySelectorAll(".btns2");
+
+  btns2.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const details = document.getElementById("myDetails2");
+      if (details) {
+        details.open = !details.open;
+      } else {
+        console.error("Element with ID 'myDetails' not found");
+      }
+    });
+  });
+});
+
+gsap.from(".list-item", {
+  x: 0,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".lists", // Element that triggers the animation
+    scroller: "#main",
+    start: "top 80%", // When the top of the element hits 80% of the viewport height
+    end: "top 0%", // When the bottom of the element hits 20% of the viewport height
+    scrub: true,
+  },
 });
