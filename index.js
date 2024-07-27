@@ -212,3 +212,90 @@ gsap.from(".list-item", {
     scrub: true,
   },
 });
+
+// gsap.to(".page8-left button", {
+//   position: "sticky",
+//   top: "15vh",
+//   y: 100,
+//   duration: 1,
+
+//   scrollTrigger: {
+//     trigger: ".page8-left", // Element that triggers the animation
+//     scroller: "#main",
+//     start: "top 10%", // When the top of the element hits 80% of the viewport height
+//     end: "top -100%", // When the bottom of the element hits 20% of the viewport height
+//   },
+// });
+
+const callItem = document.querySelectorAll(".page10");
+callItem.forEach((item) => {
+  item.addEventListener("mousemove", (e) => {
+    const cursor = item.querySelector(".call");
+    cursor.classList.remove("hidecursor");
+    cursor.classList.add("showcursor");
+
+    gsap.to(cursor, {
+      x: e.x - item.getBoundingClientRect().x - 150,
+      y: e.y - item.getBoundingClientRect().y - 100,
+
+      scale: 1,
+
+      opacity: 1,
+      duration: 0.3,
+      ease: "sine.out",
+    });
+  });
+
+  item.addEventListener("mouseleave", (e) => {
+    const cursor = item.querySelector(".call");
+    cursor.classList.remove("showcursor");
+
+    gsap.to(cursor, {
+      duration: 0.3,
+      opacity: 0,
+      scale: 0,
+      display: "none",
+      ease: "sine.out",
+    });
+    //cursor.classList.add("hidecursor");
+  });
+});
+
+function setswipe() {
+  console.log("hello");
+}
+
+const sumTags = document.querySelectorAll("details");
+sumTags.forEach((tag) => {
+  tag.addEventListener("click", () => {
+    const icon = tag.querySelector("i");
+    gsap.to(icon, {
+      rotation: icon.classList.contains("rotateIcon") ? 0 : 180,
+      duration: 0.5,
+      ease: "power3.out",
+    });
+    console.log(icon);
+    icon.classList.toggle("rotateIcon");
+    const expanded = tag.querySelector(".expanded");
+    const expandedItem = tag.querySelector(".expanded-item");
+    tag.parentElement.classList.toggle("opened");
+    const tl = gsap.timeline();
+    tl.from(expanded, {
+      height: 0,
+      opacity: 0,
+      duration: 1,
+    });
+  });
+});
+
+gsap.from(".page15-left svg", {
+  rotation: 160,
+  duration: 10,
+  scrollTrigger: {
+    trigger: ".page15-left", // Element that triggers the animation
+    scroller: "#main",
+    start: "top 90%", // When the top of the element hits 90% of the viewport height
+    end: "top -50%", // When the bottom of the element hits 20% of the viewport height
+    scrub: true,
+  },
+});
