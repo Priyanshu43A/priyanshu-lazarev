@@ -299,3 +299,67 @@ gsap.from(".page15-left svg", {
     scrub: true,
   },
 });
+
+//emailjs.init("A4UXz2L1aSIRijg-v"); // Replace with your User ID
+
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    document.getElementById(
+      "submitbtn"
+    ).innerHTML = `Sending... <i class="fa-solid fa-paper-plane"></i>`;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    const name = document.getElementById("name").value;
+
+    emailjs
+      .send("service_5ahg9rr", "template_oim1fy9", {
+        from_email: email,
+        reply_to: email,
+        from_name: name,
+        message: message,
+      })
+      .then(
+        function (response) {
+          document.getElementById("responseMessage").style.display = "flex";
+
+          document.getElementById(
+            "responseMessage"
+          ).innerHTML = ` <i class="fa-solid fa-envelope-circle-check"></i>
+            <p>Message sent successfully!</p>`;
+          document.querySelector("form").style.opacity = "0";
+          document.querySelector("#responseMessage i").classList.add("success");
+        },
+        function (error) {
+          document.getElementById("responseMessage").style.display = "flex";
+          document.getElementById(
+            "responseMessage"
+          ).innerHTML = ` <i class="fa-solid fa-xmark"></i>
+            <p>Oops! unable to send message...</p>`;
+          document.querySelector("form").style.opacity = "0";
+          document.querySelector("#responseMessage i").classList.add("warn");
+        }
+      );
+  });
+
+const callbutton = document.querySelector(".page17-left button");
+callbutton.addEventListener("mouseenter", () => {
+  gsap.to(".letter-container", {
+    bottom: "100%",
+    stagger: 0.02,
+    opacity: 1,
+    ease: "sine.inOut",
+
+    duration: 0.2,
+  });
+});
+callbutton.addEventListener("mouseleave", () => {
+  gsap.to(".letter-container", {
+    bottom: "0%",
+    stagger: 0.02,
+    opacity: 1,
+    ease: "sine.inOut",
+    duration: 0.2,
+  });
+});

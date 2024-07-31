@@ -1082,6 +1082,9 @@ video {
   background-color: rgba(78, 78, 78, 0.5);
 }
 
+.test {
+  color: #4f5bff;
+}
 .gridcont {
   width: 100%;
   display: grid;
@@ -1437,4 +1440,255 @@ details {
 .page15-right p {
   display: inline;
   font-size: 2.5vw;
+}
+
+.page16 {
+  border-top: 1px solid #474747;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 6vw;
+}
+
+.page16-left {
+  width: 50%;
+  font-size: 2vw;
+  line-height: 9vh;
+}
+
+.page16-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 6vh;
+  position: relative;
+}
+
+.page16-right form {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vh;
+  margin-top: 6vh;
+  display: flex;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.page16-right form input {
+  width: 45%;
+  padding: 10px;
+  border: none;
+  position: relative;
+  background: transparent;
+  border-bottom: 1px solid white;
+}
+
+.page16-right form input:focus {
+  outline: none;
+}
+
+textarea {
+  background: transparent;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  height: fit-content;
+  outline: none;
+  border-bottom: 1px solid white;
+  position: relative;
+  transition: all 1s ease;
+  resize: none;
+  height: 16vh;
+}
+
+form button {
+  height: 6vh;
+  border-radius: 50px;
+  border: 1px solid white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: black !important;
+  color: white !important;
+  transition: all 0.3s ease;
+
+  width: 100%;
+}
+
+form button:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+form button:hover i {
+  background-color: #fff !important;
+  color: #000 !important;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+form button:active {
+  scale: 0.9;
+}
+
+#responseMessage {
+  padding: 6vh 0;
+  position: absolute !important;
+  display: none;
+  flex-direction: column;
+  gap: 4vh;
+  align-items: center;
+  background: rgb(10, 10, 10) !important;
+  top: 0;
+  left: 0;
+  width: 70%;
+  z-index: 9999;
+  height: fit-content;
+}
+
+#responseMessage p {
+  color: rgb(255, 255, 255);
+  font-size: 2vw !important;
+  text-align: center;
+}
+
+#responseMessage i {
+  color: white;
+  text-align: center;
+  font-size: 8vw !important;
+}
+
+#responseMessage i.success {
+  color: green;
+}
+
+#responseMessage i.warn {
+  color: red;
+}
+
+.page17 {
+  border-top: 1px solid #474747;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 6vw;
+}
+
+.page17-left {
+  font-size: 3.5vw;
+  line-height: 12vh;
+  width: 35%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12vh;
+}
+
+.page17-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 6vh;
+  position: relative;
+}
+
+.page17-left button {
+  cursor: pointer;
+  width: 18vw;
+  height: 6vh;
+  border-radius: 50px;
+  background-color: #0633ad;
+  color: white;
+  position: relative;
+  border: none;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: scale 0.3s ease;
+}
+.page17-left button:hover {
+  transition: scale 0.3s ease;
+}
+.page17-left button:hover span {
+  font-size: 1vw;
+}
+.page17-left button > div {
+  display: flex;
+  gap: 1px;
+  height: 36%;
+  font-size: 1vw;
+  text-transform: uppercase;
+  font-weight: 600;
+  overflow: hidden;
+}
+.letter-container {
+  display: flex;
+  position: relative;
+  font-size: 1vw;
+
+  flex-direction: column;
+}
+
+.page17-left button i {
+  transform: rotate(-50deg);
+  font-size: 1.1vw;
+}
+
+.page17-right {
+  padding-top: 3vh;
+}
+
+.page17-right .socials {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  row-gap: 6px;
+  column-gap: 6px;
+}
+
+.page17-right a {
+  color: #0da34e;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 36px;
+  padding: 12px 24px;
+  font-size: 0.8vw;
+  border: 1.5px solid #0da34e;
+  transition: all 0.3s ease;
+}
+
+.page17-right a:hover {
+  color: rgb(10, 10, 10);
+  background-color: #0da34e;
+  transition: all 0.3s ease;
+}
+
+footer {
+  border-top: 1px solid rgba(128, 128, 128, 0.527);
+  padding: 6vh;
+}
+
+footer > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+  color: #0da34e;
+}
+
+footer span {
+  margin-left: 12px;
+  font-size: 0.8vw;
+  border-left: 1px solid white;
+  padding-left: 6px;
 }
