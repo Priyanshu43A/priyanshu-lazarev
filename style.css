@@ -113,7 +113,7 @@ nav {
   display: flex;
   height: 11vh;
   overflow-y: hidden;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   background-color: rgb(0, 0, 0);
   padding: 2vw 6vw;
@@ -124,7 +124,7 @@ nav {
 
 .nav-part-2 {
   display: flex;
-  align-items: flex-start;
+  align-items: first baseline;
   padding-top: 1vh;
   transition: width 0s;
   height: 100%;
@@ -132,7 +132,7 @@ nav {
 }
 .nav-part-2 h4 {
   text-align: start;
-  font-size: 0.75rem;
+  font-size: 0.8vw;
   text-transform: uppercase;
 }
 
@@ -192,11 +192,9 @@ nav button {
   cursor: pointer;
   font-size: 1vw;
   text-transform: uppercase;
-  padding: 1.2vh 1vw;
-  margin-bottom: 2vh;
+  padding: 1.2vh 2vh;
   border-radius: 50px;
   position: relative;
-  top: -1.5vh;
   width: fit-content;
   background-color: #0da34e;
   font-weight: bold;
@@ -283,11 +281,11 @@ nav button svg {
   padding: 3vh 0;
 }
 .page2-item .item-left p {
-  font-size: 0.8rem;
+  font-size: 1.1vw;
 }
 
 .page2-item .item-left h5 {
-  font-size: 1rem;
+  font-size: 1.3vw;
   font-weight: 400;
   width: 75%;
 }
@@ -302,6 +300,7 @@ nav button svg {
 
 .item-right h2 {
   width: 80%;
+  font-size: 2vw;
 }
 
 .right-elem img {
@@ -475,14 +474,14 @@ nav button svg {
 }
 
 .top-right-part div p:nth-child(1) {
-  font-size: 0.9rem;
+  font-size: 1.1vw;
   text-transform: uppercase;
   color: #757474be !important;
   margin-bottom: 3vh;
 }
 
 .top-right-part div p:nth-child(2) {
-  font-size: 1.5rem;
+  font-size: 1.4vw;
 }
 
 .top-left-part h2 {
@@ -551,17 +550,17 @@ nav button svg {
 
 .page5-top-item-right div {
   display: inline;
-  font-size: 0.8rem;
+  font-size: 1vw;
   padding: 12px;
   color: #adadadb9;
   width: 32%;
-  height: 20%;
+  height: 40%;
   float: left;
 }
 
 .page5-top-item-right p {
   display: inline;
-  font-size: 2.3vw;
+  font-size: 2vw;
 }
 
 .page5-item-left {
@@ -589,11 +588,11 @@ nav button svg {
 }
 
 .page5-item-left h1 {
-  font-size: 3.5rem;
+  font-size: 3.5vw;
 }
 
 .page5-item-left p {
-  font-size: 1.2rem;
+  font-size: 1.5vw;
 }
 
 .page5-item-left button {
@@ -601,7 +600,7 @@ nav button svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 8vh;
+  height: 4vw;
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -766,7 +765,7 @@ video {
   position: -webkit-sticky;
   background-color: #0da34e;
   color: white;
-  height: 8vh;
+  height: 4vw;
   border: none;
   padding: 8px 14px;
   cursor: pointer;
@@ -1007,7 +1006,7 @@ video {
 
 .page8 {
   width: 100%;
-  min-height: 100vh;
+
   background-color: #fff;
   padding: 6vw;
   display: flex;
@@ -1016,20 +1015,23 @@ video {
 
 .page8-left {
   width: 22%;
+  height: 100%;
   color: white !important;
-  height: 80vh;
+
   display: flex;
   align-items: center;
 }
 
 .page8-left button {
+  transform: translateY(450%);
   width: 100%;
   background-color: #4f5bff;
   cursor: pointer;
   border-radius: 36px;
   color: white !important;
-  height: 8vh;
+  height: 4vw;
   text-transform: uppercase;
+  font-size: 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1048,7 +1050,7 @@ video {
   color: #111 !important;
   display: flex;
   flex-direction: column;
-  gap: 14vh;
+  gap: 7vw;
 }
 
 .page8-right * {
@@ -1061,7 +1063,7 @@ video {
   font-size: 6.5vw;
   font-weight: 600;
   letter-spacing: -5px;
-  line-height: 11vh;
+  line-height: 5.5vw;
 }
 
 .page8-right p {
@@ -1156,7 +1158,6 @@ video {
   padding: 10vw 6vw;
   display: flex;
   justify-content: space-between;
-  min-height: 100vh;
 }
 
 .page9-left {
@@ -1170,7 +1171,7 @@ video {
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 8vh;
+  gap: 4vw;
 }
 
 .page9-left h2 {
@@ -1191,7 +1192,7 @@ video {
   display: flex;
   flex-direction: column;
   padding: 6vh 0;
-  gap: 6vh;
+  gap: 3vw;
   border-top: 1px solid #353535;
 }
 
@@ -1239,8 +1240,8 @@ video {
 
 .page10 {
   width: 100%;
-  min-height: 50vh;
-  height: 70vh;
+  min-height: fit-content;
+  height: fit-content;
   position: relative;
   background: linear-gradient(90deg #111, rgb(1, 20, 0));
   border-top: 1px solid #353535;
@@ -1278,6 +1279,7 @@ video {
   height: 100%;
   width: 30%;
   display: flex;
+  gap: 10vw;
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
@@ -1338,7 +1340,7 @@ details {
 }
 
 .pagge11 h1 {
-  font-size: 5rem;
+  font-size: 5vw;
   width: 40%;
   text-transform: capitalize;
 }
@@ -1388,7 +1390,7 @@ details {
   border-radius: 50px;
   cursor: pointer;
   width: 90%;
-  height: 7vh;
+  height: 4.3vw;
   font-size: 1vw;
   text-transform: uppercase;
   font-weight: bold;
@@ -1453,7 +1455,7 @@ details {
 .page16-left {
   width: 50%;
   font-size: 2vw;
-  line-height: 9vh;
+  line-height: 4.5vw;
 }
 
 .page16-right {
@@ -1478,7 +1480,7 @@ details {
 }
 
 .page16-right form input {
-  width: 45%;
+  width: 100%;
   padding: 10px;
   border: none;
   position: relative;
@@ -1505,10 +1507,10 @@ textarea {
 }
 
 form button {
-  height: 6vh;
+  height: 5vw;
   border-radius: 50px;
   border: 1px solid white;
-  font-size: 1.2rem;
+  font-size: 1.5vw;
   cursor: pointer;
   text-transform: uppercase;
   background-color: black !important;
@@ -1581,7 +1583,7 @@ form button:active {
 
 .page17-left {
   font-size: 3.5vw;
-  line-height: 12vh;
+  line-height: 7vw;
   width: 35%;
   min-height: 50vh;
   display: flex;
@@ -1600,7 +1602,7 @@ form button:active {
 .page17-left button {
   cursor: pointer;
   width: 18vw;
-  height: 6vh;
+  height: 4.5vw;
   border-radius: 50px;
   background-color: #0633ad;
   color: white;
@@ -1621,7 +1623,7 @@ form button:active {
 .page17-left button > div {
   display: flex;
   gap: 1px;
-  height: 36%;
+  height: 1.1vw;
   font-size: 1vw;
   text-transform: uppercase;
   font-weight: 600;

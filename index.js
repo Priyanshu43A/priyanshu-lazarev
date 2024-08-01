@@ -363,3 +363,21 @@ callbutton.addEventListener("mouseleave", () => {
     duration: 0.2,
   });
 });
+
+function callContact(phoneNumber) {
+  // Check if the phone number starts with a '+', if not add it
+  if (!phoneNumber.startsWith("+")) {
+    phoneNumber = "+" + phoneNumber;
+  }
+
+  // Create a link with the tel protocol and simulate a click
+  var link = document.createElement("a");
+  link.href = "tel:" + phoneNumber;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+document.querySelector("#callMeBtn").addEventListener("click", () => {
+  callContact("918057607415");
+});
