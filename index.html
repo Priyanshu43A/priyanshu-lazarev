@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LAZAREV</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
@@ -24,68 +25,139 @@
         src="https://lazarev.kiev.ua/la24/la-reel--min.mp4"
       ></video>
     </div>
-    <nav>
-      <h1 style="font-weight: 700">Lazarev.</h1>
-      <div class="nav-part-2">
-        <div class="nav-item">
-          <h4>Case Studies</h4>
-        </div>
-        <div class="nav-item">
-          <h4>Areas of Experties</h4>
-          <div class="more-nav-items">
-            <h4>🔥 AI & ML</h4>
-            <h4>Fintech</h4>
-            <h4>Real Estate</h4>
-            <h4>E-commerce</h4>
-            <h4>Web3</h4>
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Responsive Nav with GSAP</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+      </head>
+      <body>
+        <nav id="mobileNav">
+          <div class="nav-header">
+            <div id="mobileLogo"><span>LAZAREV.</span></div>
+            <div class="nav-icons">
+              <i class="fa-solid fa-pen" id="penIcon"></i>
+              <i class="fa-solid fa-bars" id="hamburgerIcon"></i>
+              <i class="fa-solid fa-times" id="closeIcon"></i>
+            </div>
+          </div>
+          <div id="navMenu" class="nav-menu">
+            <a href="#">Case studies</a>
+            <div class="expanded-nav-item">
+              <a href="#">Areas of Expertise</a>
+              <div>
+                <a href="#"><p>🔥AI & ML</p></a>
+                <a href="#"><p>FinTech</p></a>
+                <a href="#"><p>Real Estate</p></a>
+                <a href="#"><p>E-Commerce</p></a>
+                <a href="#"><p>Web3</p></a>
+              </div>
+            </div>
+            <div class="expanded-nav-item">
+              <a href="#">UI/UX Design</a>
+              <div>
+                <a href="#"><p>UX Audit</p></a>
+                <a href="#"><p>UI Design</p></a>
+                <a href="#"><p>UX Design</p></a>
+                <a href="#"><p>UX Research</p></a>
+              </div>
+            </div>
+            <div class="expanded-nav-item">
+              <a href="#">Product Design</a>
+              <div>
+                <a href="#"><p>SaaS</p></a>
+                <a href="#"><p>Web App</p></a>
+                <a href="#"><p>Mobile App</p></a>
+                <a href="#"><p>Website Design</p></a>
+              </div>
+            </div>
+            <div class="expanded-nav-item">
+              <a href="#">Design Process</a>
+              <div>
+                <a href="#"><p>MVP</p></a>
+                <a href="#"><p>Relaunch</p></a>
+              </div>
+            </div>
+            <div class="expanded-nav-item">
+              <a href="#">About Agency</a>
+              <div>
+                <a href="#"><p>Our Story</p></a>
+                <a href="#"><p>Careers</p></a>
+                <a href="#"><p>News & Articles</p></a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <script src="script.js"></script>
+      </body>
+    </html>
+
+    <nav id="deskNav">
+      <div>
+        <div id="desklogo"><span>LAZAREV.</span></div>
+        <div class="nav-items">
+          <a href="#">Case studies</a>
+
+          <div class="expanded-nav-items">
+            <a href="#">areas of expertise</a>
+            <div>
+              <a href="#"><p>🔥AI & ML</p></a>
+              <a href="#"> <p>FinTech</p></a>
+              <a href="#"><p>Real Estate</p></a>
+              <a href="#"><p>E-Commerce</p></a>
+              <a href="#"><p>Web3</p></a>
+            </div>
+          </div>
+          <div class="expanded-nav-items">
+            <a href="#">uiux design</a>
+            <div>
+              <a href="#"><p>UX audit</p></a>
+              <a href="#"> <p>UI Design</p></a>
+              <a href="#"><p>UX Design</p></a>
+              <a href="#"><p>UX Research</p></a>
+            </div>
+          </div>
+          <div class="expanded-nav-items">
+            <a href="#">product design</a>
+            <div>
+              <a href="#"><p>Sass</p></a>
+              <a href="#"> <p>Web App</p></a>
+              <a href="#"><p>Mobile App</p></a>
+              <a href="#"><p>Website Design</p></a>
+            </div>
+          </div>
+          <div class="expanded-nav-items">
+            <a href="#">design process</a>
+            <div>
+              <a href="#"><p>MVP</p></a>
+              <a href="#"> <p>Relaunch</p></a>
+            </div>
+          </div>
+          <div class="expanded-nav-items">
+            <a href="#">about agency</a>
+            <div>
+              <a href="#"><p>Our Story</p></a>
+              <a href="#"> <p>Careers</p></a>
+              <br /><br /><br /><br />
+              <a href="#"><p>News & Articles</p></a>
+            </div>
           </div>
         </div>
-        <div class="nav-item">
-          <h4>UI/UX design</h4>
-          <div class="more-nav-items">
-            <h4>UX Audit</h4>
-            <h4>UI Design</h4>
-            <h4>UX Design</h4>
-            <h4>UX Research</h4>
-          </div>
-        </div>
-        <div class="nav-item">
-          <h4>Product Design</h4>
-          <div class="more-nav-items">
-            <h4>Sass</h4>
-            <h4>Web App</h4>
-            <h4>Mobile App</h4>
-            <h4>Website Design</h4>
-          </div>
-        </div>
-        <div class="nav-item">
-          <h4>Design Process</h4>
-          <div class="more-nav-items">
-            <h4>MVP</h4>
-            <h4>Relaunch</h4>
-          </div>
-        </div>
-        <div class="nav-item">
-          <h4>About agency</h4>
-          <div class="more-nav-items">
-            <h4>Our Story</h4>
-            <h4>Clients Feedback</h4>
-            <h4></h4>
-            <h4></h4>
-            <h4>News & Stories</h4>
-          </div>
+        <div class="nav-cta-btn">
+          <button>
+            <div id="btn-bg"></div>
+            <p>Let's talk</p>
+            <i class="fa-solid fa-pen"></i>
+          </button>
         </div>
       </div>
-      <button>
-        Let's talk
-        <svg fill="none" viewBox="0 0 20 20">
-          <path
-            fill="#fff"
-            d="M2.5 14.375V17.5h3.125l9.217-9.217-3.125-3.125L2.5 14.375Zm14.758-8.508a.83.83 0 0 0 0-1.175l-1.95-1.95a.83.83 0 0 0-1.175 0l-1.525 1.525 3.125 3.125 1.525-1.525Z"
-          ></path>
-        </svg>
-      </button>
     </nav>
+
     <main id="main">
       <div id="page1">
         <h1>
@@ -383,7 +455,7 @@
             <div style="border: none" class="page5-item-left"></div>
             <div class="page5-item-right">
               <div>
-                <div class="title">Accern.Rhea</div>
+                <div class="title"><span>Accern.</span><span>Rhea</span></div>
                 <div class="other">
                   <p>
                     Founded by Accern, a front-runner in No-Code NLP, Rhea
@@ -562,7 +634,9 @@
             </div>
             <div class="page5-item-right">
               <div>
-                <div class="title">CollectorCrypt</div>
+                <div class="title">
+                  <span>Collector</span><span>Crypt</span>
+                </div>
                 <div class="other">
                   <p>
                     Founded by Accern, a front-runner in No-Code NLP, Rhea
@@ -594,7 +668,7 @@
             <div style="border: none" class="page5-item-left"></div>
             <div class="page5-item-right">
               <div>
-                <div class="title">BlockBeat</div>
+                <div class="title"><span>Block</span>Beat<span></span></div>
                 <div class="other">
                   <p>
                     Founded by Accern, a front-runner in No-Code NLP, Rhea
@@ -1154,7 +1228,24 @@
           </p>
         </div>
       </div>
-      <div class="page16">
+      <div style="position: relative" class="page16">
+        <p
+          style="
+            position: absolute;
+            z-index: -1;
+            font-size: 8vw;
+            width: 90%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(71, 71, 71, 0.5);
+            font-weight: 900;
+            text-align: center;
+          "
+        >
+          Developer's Corner
+        </p>
         <div class="page16-left">
           <h1>
             Have a project in mind? <br />
@@ -1176,7 +1267,24 @@
           </div>
         </div>
       </div>
-      <div class="page17">
+      <div style="position: relative" class="page17">
+        <p
+          style="
+            position: absolute;
+            z-index: -1;
+            font-size: 8vw;
+            width: 90%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(71, 71, 71, 0.5);
+            font-weight: 900;
+            text-align: center;
+          "
+        >
+          Developer's Corner
+        </p>
         <div class="page17-left">
           <h1>want to hire?</h1>
           <button id="callMeBtn">

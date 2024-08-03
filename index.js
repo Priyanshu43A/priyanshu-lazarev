@@ -42,19 +42,6 @@ function locomotiveAnimation() {
 
 locomotiveAnimation();
 
-const navbar = document.querySelector("nav");
-
-navbar.addEventListener("mouseenter", () => {
-  const tl = gsap.timeline();
-  tl.from(".more-nav-items h4", {
-    opacity: 0,
-    delay: 0.1,
-    y: 20,
-    stagger: 0.03,
-    ease: "power2.in",
-  });
-});
-
 gsap.to(".move", {
   x: "-100vw",
   ease: "linear",
@@ -380,4 +367,108 @@ function callContact(phoneNumber) {
 
 document.querySelector("#callMeBtn").addEventListener("click", () => {
   callContact("918057607415");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navBar = document.querySelector("#deskNav");
+  const navBtns = navBar.querySelectorAll(".expanded-nav-items");
+
+  let enterTimeline, leaveTimeline;
+
+  navBtns.forEach((btn) => {
+    btn.addEventListener("mouseenter", () => {
+      // Kill any existing leave timeline to avoid conflicts
+      if (leaveTimeline) leaveTimeline.kill();
+
+      // Create a new enter timeline
+      enterTimeline = gsap.timeline();
+
+      enterTimeline.to(navBar, {
+        height: "40vh",
+        duration: 0.2,
+        ease: "back.Out",
+      });
+      enterTimeline.to(
+        ".expanded-nav-items > div p",
+        {
+          opacity: 1,
+          y: "0%",
+          duration: 0.1,
+          stagger: 0.03,
+          ease: "power3.out",
+        },
+        "-=0.1"
+      );
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      // Kill any existing enter timeline to avoid conflicts
+      if (enterTimeline) enterTimeline.kill();
+
+      // Create a new leave timeline
+      leaveTimeline = gsap.timeline();
+
+      leaveTimeline.to(
+        ".expanded-nav-items > div p",
+        {
+          opacity: 0,
+          y: "100%",
+          duration: 0.1,
+          stagger: -0.01,
+          ease: "power3.out",
+        },
+        "same"
+      );
+      leaveTimeline.to(
+        navBar,
+        {
+          height: "11vh",
+          duration: 0.2,
+          ease: "power3.out",
+        },
+        "same"
+      );
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerIcon = document.getElementById("hamburgerIcon");
+  const closeIcon = document.getElementById("closeIcon");
+  const navMenu = document.getElementById("navMenu");
+
+  hamburgerIcon.addEventListener("click", () => {
+    gsap.to(navMenu, { duration: 0.5, x: 0, ease: "power2.inOut" });
+    navMenu.style.display = "flex";
+    hamburgerIcon.style.display = "none";
+    closeIcon.style.display = "block";
+    gsap.fromTo(
+      "expanded-nav-item > a",
+      { opacity: 0 },
+      { duration: 0.5, opacity: 1, ease: "power2.inOut" }
+    );
+    gsap.fromTo(
+      "#navMenu p",
+      { y: 100, opacity: 0 },
+      {
+        duration: 0.5,
+        delay: 0.2,
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
+        ease: "power2.inOut",
+      }
+    );
+  });
+
+  closeIcon.addEventListener("click", () => {
+    gsap.to(navMenu, {
+      duration: 0.5,
+      x: "100%",
+      ease: "power2.inOut",
+      onComplete: () => (navMenu.style.display = "none"),
+    });
+    closeIcon.style.display = "none";
+    hamburgerIcon.style.display = "block";
+  });
 });
